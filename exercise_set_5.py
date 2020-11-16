@@ -56,17 +56,8 @@ print("\nJSON data: ", json.dumps(j_str, sort_keys=True, indent=4))
 
 
 # create a new JSON file from an existing JSON file
-with open("states.json") as f:
-    state_data = json.load(f)
-print("Original JSON keys: ", [state.keys()
-    for state in state_data["states"]][0])
-for state in state_data["states"]:
-    del state["area_codes"]
-print("\nModified JSON keys: ", [state.keys()
-    for state in state_data["states"]][0])
-with open("new_states.json", "w") as f:
-    json.dump(state_data, f, indent=2)
-with open("new_states.json") as f:
-    state_data = json.load(f)
-print("\nReloaded JSON keys: ", [state.keys()
-    for state in state_data["states"]][0])
+with open("resources/states.json") as f:
+    state_data = json.load(f)  # reads JSON data and store them in state_data
+new_states_data = json.dumps(state_data)
+print(new_states_data)
+
