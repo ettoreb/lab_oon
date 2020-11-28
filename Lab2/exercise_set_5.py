@@ -56,7 +56,7 @@ print("\nJSON data: ", json.dumps(j_str, sort_keys=True, indent=4))
 
 
 # create a new JSON file from an existing JSON file
-with open("resources/states.json") as f:
+with open("../resources/states.json") as f:
     state_data = json.load(f)  # reads JSON data and store them in state_data
 new_states_data = json.dumps(state_data)
 print(new_states_data)

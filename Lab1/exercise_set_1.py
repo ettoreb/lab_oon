@@ -14,15 +14,13 @@ else:
     print("The result is ", result)
 
 num = 10
-print(" Printing current and previous number sum in a given range ")
 prev = 0
 for curr in range(num):
     tot = curr + prev
 print("Sum: ", tot)
 prev = curr
 
-num_list = [10, 20, 30, 40, 10]  # Arbitrary list
-print(f"Are the first and the last elements of the list {num_list} the same ?")
+num_list = [10, 20, 30, 40, 10]
 first_element = num_list[0]
 last_element = num_list[-1]
 if first_element == last_element:
@@ -37,7 +35,7 @@ for num in num_list:
     if num % 5 == 0:
         print(num)
 
-statement = "Emma is a designer. Emma is also an homeless."
+statement = "Emma is a designer. Emma is also an artist."
 count = 0
 for i in range(len(statement)-1):
     count += statement[i:i+4] == "Emma"

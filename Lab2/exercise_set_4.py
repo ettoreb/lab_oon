@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # The JSON module is used to convert the python dictionary into a JSON string that can be written into a file
 
 def es_1():
-    data = pd.read_csv("resources/sales_data.csv")
+    data = pd.read_csv("../resources/sales_data.csv")
     profit_list = data["total_profit"].values
     months = data["month_number"].values
     plt.figure()
@@ -23,7 +23,7 @@ def es_1():
 
 
 def es_2():
-    df = pd.read_csv("resources/sales_data.csv")
+    df = pd.read_csv("../resources/sales_data.csv")
     profit_list = df["total_profit"].values
     months = df["month_number"].values
     plt.figure()
@@ -39,7 +39,7 @@ def es_2():
 
 
 def es_3():
-    df = pd.read_csv("resources/sales_data.csv")
+    df = pd.read_csv("../resources/sales_data.csv")
     facecream = df["facecream"].values
     facewash = df["facewash"].values
     toothpaste = df["toothpaste"].values
@@ -63,7 +63,7 @@ def es_3():
 
 def es_4():
     # Read toothpaste sales data of each month and show it using a scatter plot
-    df = pd.read_csv("resources/sales_data.csv")
+    df = pd.read_csv("../resources/sales_data.csv")
     toothpaste = df["toothpaste"].values
     months = df["month_number"].values
     plt.scatter(months, toothpaste, label="Toothpaste Sales Data")
@@ -75,7 +75,7 @@ def es_4():
 
 
 def es_5():
-    df = pd.read_csv("resources/sales_data.csv")
+    df = pd.read_csv("../resources/sales_data.csv")
     months = df["month_number"].values
     bathingsoap = df["bathingsoap"].values
     plt.bar(months, bathingsoap, label="Bathing Soap Sales Data")
