@@ -86,7 +86,43 @@ def es_5():
     plt.show()
 
 
-if __name__ == "__main__":
+def es_6():
+    df = pd.read_csv("..resources/sales_data.csv")
+    profit_list=df['total_profit'].values
+    plt.figure()
+    profit_range = [150e3, 175e3, 200e3, 225e3, 250e3, 300e3, 350e3]
+    plt.hist(profit_list, profit_range, label='Profit data')
+    plt.xlabel('profit range [$]')
+    plt.ylabel('Actual Profit [$]')
+    plt.legend(loc='upper left')
+    plt.xticks(profit_range)
+    plt.title('Profit data')
+    plt.show()
+
+def es_7():
+    df = pd.read_csv("..resources/sales_data.csv")
+    months = df['month_number'].values
+    bathing_soap = df['bathingsoap'].values
+    face_wash_sales_data = df['facewash'].values
+    f, axs = plt.subplots(2, 1, sharex=True)
+    axs[0].plot(months, bathing_soap, label='Bathing soap sales data',
+                color ='k', marker ='o', linewidth = 3)
+    axs[0].set_title('Sales data of a bathing soap')
+    axs[0].grid(True, linewidth=0.5, linestyle='--')
+    axs[0].legend()
+    axs[1].plot(months, face_wash_sales_data, label='Face wash sales data',
+                color ='r', marker ='o', linewidth = 3)
+    axs[1].set_title('Sales data of a face wash')
+    axs[1].grid(True, linewidth=0.5, linestyle='--')
+    axs[1].legend()
+    plt.xticks(months)
+    plt.xlabel('Month number')
+    plt.ylabel('Sales units in number')
+    plt.show()
+
+
+
+    if __name__ == "__main__":
     print("\n------- Exercise set 3, NumPy --------")
     print("\n Exercise 1")
     es_1()
@@ -98,3 +134,7 @@ if __name__ == "__main__":
     es_4()
     print("\n Exercise 5")
     es_5()
+    print("\n Exercise 6")
+    es_6()
+    print("\n Exercise 7")
+    es_7()
